@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	h1 Create Poll
+	input(id="createPoll", type="text", value="", placeholder="Group Name", class="topcoat-text-input")
+	select(id="createDuration", class="docNav")
+		option(value="1")
+			| 1 Hour
+		option(value="12")
+			| 12 Hours
+		option(value="24")
+			| 24 Hours
+	button(class="topcoat-button", onclick="create()") create
+	h1 Join Poll
+	input(id="joinName", type="text", value="", placeholder="Join", class="topcoat-text-input")
+	button(class="topcoat-button", onclick="join()") join

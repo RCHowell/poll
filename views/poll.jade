@@ -1,0 +1,25 @@
+extends layout
+
+block content
+	h1(id="groupTitle")= name
+	img(src="images/reset.png", id="reset", onclick="zero()", title="Reset Poll")
+	#loading
+		img(src="images/loading.gif", id="loading-gif")
+	#main
+		.vote
+			h2
+				| Yes
+			h2(id="yes", class="main-header")
+				| 0
+		.vote
+			h2
+				| No
+			h2(id="no", class="main-header")
+				| 0
+	footer
+		div(id="btn-yes", class="button", onclick="vote(1)")
+			| Yes
+		div(id="btn-no", class="button", onclick="vote(2)")
+			| No
+	script(src='javascripts/socket.js')
+	script(src='javascripts/join.js')
