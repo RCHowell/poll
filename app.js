@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 //db stuff
-var db = require('mongoskin').db(process.env.MONGOSOUP_URL, {native_parser:true});
+var db = require('mongoskin').db(process.env.MONGOLAB_URI, {native_parser:true});
 
 var routes = require('./routes/index');
 
