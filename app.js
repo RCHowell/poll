@@ -63,13 +63,11 @@ app.use(function(err, req, res, next) {
 
 var interval = setInterval(clear, 30*60*1000);
 function clear(){
-    console.log("clear");
     i = 0;
     var now = Date.now();
     db.collection('sessions').find({}).toArray(function(err, items){
       while(i < items.length){
         if(parseInt(items[i].expires) < now){
-            console.log('hello');
             db.collection('sessions').remove({'name': items[i].name.toString()}, function(err, removed){
                 console.log(removed);
             });
